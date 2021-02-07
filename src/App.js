@@ -1,23 +1,33 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
 
 function App() {
+  const [films, setFilms] = useState([]);
+
+  async function getFilms() {
+    const response = await fetch('https://ghibliapi.herokuapp.com/films');
+    const data = await response.json();
+
+    setFilms(data);
+  }
+
+  function FilmsList() {
+    return (
+      <>
+        <h1>Top Films</h1>
+        <ul>
+          {films.map((film) => (
+            <li>{film.title}</li>
+          ))}
+        </ul>
+      </>
+    );
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <FilmsList />
+      <button onClick={getFilms}>Get All Films</button>
     </div>
   );
 }
