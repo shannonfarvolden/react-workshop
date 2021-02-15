@@ -2,22 +2,23 @@ import React, { useState } from 'react';
 import './App.css';
 
 function App() {
-  const [films, setFilms] = useState([]);
+  const [data, setData] = useState([]);
 
   async function getFilms() {
     const response = await fetch('https://ghibliapi.herokuapp.com/films');
-    const data = await response.json();
+    const filmsData = await response.json();
 
-    setFilms(data);
+    setData(filmsData);
   }
 
-  function FilmsList() {
+  function ItemsList(props) {
+    const {type} = props
     return (
       <>
-        <h1>Top Films</h1>
+        <h1>Top {type}</h1>
         <ul>
-          {films.map((film) => (
-            <li>{film.title}</li>
+          {data.map((item) => (
+            <li>{item.title}</li>
           ))}
         </ul>
       </>
@@ -26,7 +27,7 @@ function App() {
 
   return (
     <div className="App">
-      <FilmsList />
+      <ItemsList type={"Films"}/>
       <button onClick={getFilms}>Get All Films</button>
     </div>
   );
