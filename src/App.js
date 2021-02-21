@@ -4,11 +4,18 @@ import './App.css';
 function App() {
   const [data, setData] = useState([]);
 
-  async function getFilms() {
-    const response = await fetch('https://ghibliapi.herokuapp.com/films');
-    const filmsData = await response.json();
+  async function getSpecies() {
+    const response = await fetch('https://ghibliapi.herokuapp.com/species');
+    const speciesData = await response.json();
 
-    setData(filmsData);
+    setData(speciesData);
+  }
+
+  async function getPeople() {
+    const response = await fetch('https://ghibliapi.herokuapp.com/people');
+    const peopleData = await response.json();
+
+    setData(peopleData);
   }
 
   function ItemsList(props) {
@@ -18,7 +25,7 @@ function App() {
         <h1>Top {type}</h1>
         <ul>
           {data.map((item) => (
-            <li>{item.title}</li>
+            <li>{item.name}</li>
           ))}
         </ul>
       </>
@@ -27,8 +34,9 @@ function App() {
 
   return (
     <div className="App">
-      <ItemsList type={"Films"}/>
-      <button onClick={getFilms}>Get All Films</button>
+      <ItemsList type={"Species"}/>
+      <button onClick={getSpecies}>Get All Species</button>
+      <button onClick={getPeople}>Get People</button>
     </div>
   );
 }
