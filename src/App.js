@@ -3,7 +3,7 @@ import './App.css';
 
 function App() {
   const [data, setData] = useState([]);
-
+/* 
   async function getSpecies() {
     const response = await fetch('https://ghibliapi.herokuapp.com/species');
     const speciesData = await response.json();
@@ -16,6 +16,13 @@ function App() {
     const peopleData = await response.json();
 
     setData(peopleData);
+  } */
+
+  async function getData(thing) {
+    const response = await fetch(`https://ghibliapi.herokuapp.com/${thing}`);
+    const data = await response.json();
+
+    setData(data);
   }
 
   function ItemsList(props) {
@@ -35,8 +42,8 @@ function App() {
   return (
     <div className="App">
       <ItemsList type={"Species"}/>
-      <button onClick={getSpecies}>Get All Species</button>
-      <button onClick={getPeople}>Get People</button>
+      <button onClick={() => {getData("species")}}>Get All Species</button>
+      <button onClick={() => {getData("people")}}>Get People</button>
     </div>
   );
 }
