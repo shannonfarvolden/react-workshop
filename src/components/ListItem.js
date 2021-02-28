@@ -1,9 +1,9 @@
 function ListItem(props) {
-  const { type, data } = props;
+  const { title, data } = props;
 
   return (
     <>
-      <h1>Top {type}</h1>
+      <h1>{title}</h1>
       <ul>
         {data.map((item) => (
           <li key={item.name}>{item.name}</li>

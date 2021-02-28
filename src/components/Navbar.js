@@ -1,9 +1,21 @@
 function Navbar(props) {
-  const { handleOnClickSpecies, handleOnClickPeople } = props;
+  const { setType } = props;
   return (
     <>
-      <button onClick={handleOnClickSpecies}>Get All Species</button>
-      <button onClick={handleOnClickPeople}>Get People</button>
+      <button
+        onClick={() => {
+          setType('species');
+        }}
+      >
+        Get All Species
+      </button>
+      <button
+        onClick={() => {
+          setType('people');
+        }}
+      >
+        Get People
+      </button>
     </>
   );
 }
