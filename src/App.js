@@ -1,40 +1,34 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import './App.css';
+import ListItem from './components/ListItem';
 
 function App() {
-  const [data, setData] = useState([]);
+  const [species, setSpecies] = useState([]);
+  const [people, setPeople] = useState([]);
   const [type, setType] = useState('species');
 
-  useEffect(() => {
-    getListResults();
-  }, [type]);
-
-  async function getListResults() {
-    const response = await fetch(`https://ghibliapi.herokuapp.com/${type}`);
+  async function getSpecies() {
+    const response = await fetch(`https://ghibliapi.herokuapp.com/species`);
     const data = await response.json();
 
-    setData(data);
+    setSpecies(data);
   }
 
-  function ItemsList() {
-    return (
-      <>
-        <h1>Top {type}</h1>
-        <ul>
-          {data.map((item) => (
-            <li key={item.name}>{item.name}</li>
-          ))}
-        </ul>
-      </>
-    );
+  async function getPeople() {
+    const response = await fetch(`https://ghibliapi.herokuapp.com/people`);
+    const data = await response.json();
+
+    setPeople(data);
   }
 
   return (
     <div className="App">
-      <ItemsList />
+      {type === 'species' ? <ListItem data={species} type={type} /> : null}
+      {type === 'people' ? <ListItem data={people} type={type} /> : null}
       <button
         onClick={() => {
           setType('species');
+          getSpecies();
         }}
       >
         Get All Species
@@ -42,6 +36,7 @@ function App() {
       <button
         onClick={() => {
           setType('people');
+          getPeople();
         }}
       >
         Get People
