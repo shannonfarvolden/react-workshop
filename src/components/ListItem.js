@@ -1,5 +1,3 @@
-import React from 'react';
-
 function ListItem(props) {
   const { type, data } = props;
 

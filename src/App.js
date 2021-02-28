@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
 import ListItem from './components/ListItem';
+import Navbar from './components/Navbar';
 
 function App() {
   const [species, setSpecies] = useState([]);
@@ -21,26 +22,24 @@ function App() {
     setPeople(data);
   }
 
+  const handleOnClickSpecies = () => {
+    setType('species');
+    getSpecies();
+  };
+
+  const handleOnClickPeople = () => {
+    setType('people');
+    getPeople();
+  };
+
   return (
     <div className="App">
       {type === 'species' ? <ListItem data={species} type={type} /> : null}
       {type === 'people' ? <ListItem data={people} type={type} /> : null}
-      <button
-        onClick={() => {
-          setType('species');
-          getSpecies();
-        }}
-      >
-        Get All Species
-      </button>
-      <button
-        onClick={() => {
-          setType('people');
-          getPeople();
-        }}
-      >
-        Get People
-      </button>
+      <Navbar
+        handleOnClickPeople={handleOnClickPeople}
+        handleOnClickSpecies={handleOnClickSpecies}
+      />
     </div>
   );
 }
