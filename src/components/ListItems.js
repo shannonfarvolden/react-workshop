@@ -1,13 +1,16 @@
 function ListItems(props) {
-  const { title, data } = props;
+  const { data, search } = props;
 
   return (
     <>
-      <h1>{title}</h1>
       <ul>
-        {data.map((item) => (
-          <li key={item.name}>{item.name}</li>
-        ))}
+        {data
+          .filter((item) => {
+            return item.name.toLowerCase().startsWith(search.toLowerCase());
+          })
+          .map((item) => (
+            <li key={item.name}>{item.name}</li>
+          ))}
       </ul>
     </>
   );

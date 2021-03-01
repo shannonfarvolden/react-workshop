@@ -1,8 +1,10 @@
 import { useState, useEffect } from 'react';
-import ListItem from './ListItem';
+import ListItems from './ListItems';
+import Search from './Search';
 
 function Species() {
   const [species, setSpecies] = useState([]);
+  const [search, setSearch] = useState('');
 
   useEffect(() => {
     async function getSpecies() {
@@ -15,7 +17,13 @@ function Species() {
     getSpecies();
   }, []);
 
-  return <ListItem data={species} title={'Top Species'} />;
+  return (
+    <>
+      <h1>Species in Studio Ghibli films</h1>
+      <ListItems data={species} title={'Top Species'} search={search} />
+      <Search type={'species'} setSearch={setSearch} />
+    </>
+  );
 }
 
 export default Species;
