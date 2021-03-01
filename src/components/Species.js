@@ -20,8 +20,8 @@ function Species() {
   return (
     <>
       <h1>Species in Studio Ghibli films</h1>
-      <ListItems data={species} title={'Top Species'} filter={search} />
       <Search type={'species'} setSearch={setSearch} />
+      <ListItems data={species} title={'Top Species'} filter={search} />
     </>
   );
 }

@@ -20,8 +20,8 @@ function People() {
   return (
     <>
       <h1>People in Studio Ghibli films</h1>
-      <ListItems data={people} filter={search} />
       <Search type={'people'} setSearch={setSearch} />
+      <ListItems data={people} filter={search} />
     </>
   );
 }
