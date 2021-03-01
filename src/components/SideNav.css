@@ -7,16 +7,32 @@
   background: #eee;
   padding: 8px 0;
   border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.sidenav a {
+.sidenav button {
   padding: 6px 8px;
   text-decoration: none;
   font-size: 16px;
   color: #4d8ef7;
   display: block;
+  cursor: pointer;
+  background: none;
+  border: none;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
 }
 
-.sidenav a:hover {
+.sidenav button:hover {
   color: #156af3;
+}
+
+.divider {
+  width: 100%;
+  height: 1px;
+  background-color: grey;
+  margin: 8px 0px;
 }

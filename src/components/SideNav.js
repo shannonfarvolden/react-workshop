@@ -1,28 +1,34 @@
 import './SideNav.css';
 
-function Navbar(props) {
+function SideNav(props) {
   const { setType } = props;
   return (
-    <div className="sidenav">
-      <a
-        href="#"
+    <nav className="sidenav">
+      <button
         onClick={() => {
-          setType('species');
+          setType('films');
         }}
       >
-        Species
-      </a>
-      <hr />
-      <a
-        href="#"
+        Films
+      </button>
+      <div className="divider" />
+      <button
+        onClick={() => {
+          setType('locations');
+        }}
+      >
+        Locations
+      </button>
+      <div className="divider" />
+      <button
         onClick={() => {
           setType('people');
         }}
       >
         People
-      </a>
-    </div>
+      </button>
+    </nav>
   );
 }
 
-export default Navbar;
+export default SideNav;

@@ -8,18 +8,14 @@
 .list-container {
   margin: 20px;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
 .list-card {
   border-radius: 5px;
-  width: 500px;
-  height: auto;
+  width: 60%;
   padding: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   background-color: #eee;
+  overflow-y: auto;
 }
