@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import './App.css';
-import Navbar from './components/Navbar';
+import SideNav from './components/SideNav';
 import People from './components/People';
 import Species from './components/Species';
 
@@ -9,9 +9,10 @@ function App() {
 
   return (
     <div className="App">
+      <h1>Studio Ghibli Films</h1>
       {type === 'species' ? <Species /> : null}
       {type === 'people' ? <People /> : null}
-      <Navbar setType={setType} />
+      <SideNav setType={setType} />
     </div>
   );
 }

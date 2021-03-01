@@ -1,3 +1,5 @@
+import './Search.css';
+
 function Search(props) {
   const { type, setSearch } = props;
 

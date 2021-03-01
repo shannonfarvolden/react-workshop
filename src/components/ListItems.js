@@ -1,18 +1,21 @@
+import './ListItems.css';
 function ListItems(props) {
   const { data, filter } = props;
 
   return (
-    <>
-      <ul>
+    <div className="list-container">
+      <div className="list-card">
         {data
           .filter((item) =>
             item.name.toLowerCase().startsWith(filter.toLowerCase())
           )
           .map((item) => (
-            <li key={item.name}>{item.name}</li>
+            <div class="item" key={item.name}>
+              {item.name}
+            </div>
           ))}
-      </ul>
-    </>
+      </div>
+    </div>
   );
 }
 

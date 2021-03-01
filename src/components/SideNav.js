@@ -1,22 +1,27 @@
+import './SideNav.css';
+
 function Navbar(props) {
   const { setType } = props;
   return (
-    <>
-      <button
+    <div className="sidenav">
+      <a
+        href="#"
         onClick={() => {
           setType('species');
         }}
       >
-        Get All Species
-      </button>
-      <button
+        Species
+      </a>
+      <hr />
+      <a
+        href="#"
         onClick={() => {
           setType('people');
         }}
       >
-        Get People
-      </button>
-    </>
+        People
+      </a>
+    </div>
   );
 }
 
