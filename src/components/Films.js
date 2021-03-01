@@ -24,16 +24,16 @@ function Films() {
       <div className="list-container">
         <div className="list-card">
           {films
-            .filter((item) =>
-              item.title.toLowerCase().startsWith(search.toLowerCase())
+            .filter((film) =>
+              film.title.toLowerCase().startsWith(search.toLowerCase())
             )
-            .map((item) => (
-              <div className="item" key={item.title}>
-                <h3>{item.title}</h3>
-                <p>Director: {item.director}</p>
-                <p>Producer: {item.producer}</p>
-                <p>Release_date: {item.release_date}</p>
-                <p>Rotton Tomato Score: {item.rt_score}</p>
+            .map((film) => (
+              <div className="item" key={film.title}>
+                <h3>{film.title}</h3>
+                <p>Director: {film.director}</p>
+                <p>Producer: {film.producer}</p>
+                <p>Release_date: {film.release_date}</p>
+                <p>Rotten Tomato Score: {film.rt_score}</p>
               </div>
             ))}
         </div>

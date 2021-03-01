@@ -24,15 +24,15 @@ function People() {
       <div className="list-container">
         <div className="list-card">
           {people
-            .filter((item) =>
-              item.name.toLowerCase().startsWith(search.toLowerCase())
+            .filter((person) =>
+              person.name.toLowerCase().startsWith(search.toLowerCase())
             )
-            .map((item) => (
-              <div className="item" key={item.name}>
-                <h3>{item.name}</h3>
-                <p>Age: {item.age}</p>
-                <p>Hair Colour: {item.eye_color}</p>
-                <p>Eye Colour: {item.hair_color}</p>
+            .map((person) => (
+              <div className="item" key={person.name}>
+                <h3>{person.name}</h3>
+                <p>Age: {person.age}</p>
+                <p>Hair Colour: {person.eye_color}</p>
+                <p>Eye Colour: {person.hair_color}</p>
               </div>
             ))}
         </div>

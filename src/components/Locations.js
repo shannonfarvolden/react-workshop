@@ -24,15 +24,15 @@ function Locations() {
       <div className="list-container">
         <div className="list-card">
           {locations
-            .filter((item) =>
-              item.name.toLowerCase().startsWith(search.toLowerCase())
+            .filter((location) =>
+              location.name.toLowerCase().startsWith(search.toLowerCase())
             )
-            .map((item) => (
-              <div className="item" key={item.name}>
-                <h3>{item.name}</h3>
+            .map((location) => (
+              <div className="item" key={location.name}>
+                <h3>{location.name}</h3>
 
-                <p>Climate: {item.climate}</p>
-                <p>Terrain: {item.terrain}</p>
+                <p>Climate: {location.climate}</p>
+                <p>Terrain: {location.terrain}</p>
               </div>
             ))}
         </div>
