@@ -28,7 +28,7 @@ function Films() {
               item.title.toLowerCase().startsWith(search.toLowerCase())
             )
             .map((item) => (
-              <div className="item" key={item.name}>
+              <div className="item" key={item.title}>
                 <h3>{item.title}</h3>
                 <p>Director: {item.director}</p>
                 <p>Producer: {item.producer}</p>
