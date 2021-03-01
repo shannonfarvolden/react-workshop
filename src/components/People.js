@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import ListItem from './ListItem';
+import ListItems from './ListItems';
 
 function People() {
   const [people, setPeople] = useState([]);
@@ -14,7 +14,7 @@ function People() {
     getPeople();
   }, []);
 
-  return <ListItem data={people} title={'Top People'} />;
+  return <ListItems data={people} title={'Top People'} />;
 }
 
 export default People;

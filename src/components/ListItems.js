@@ -1,4 +1,4 @@
-function ListItem(props) {
+function ListItems(props) {
   const { title, data } = props;
 
   return (
@@ -13,4 +13,4 @@ function ListItem(props) {
   );
 }
 
-export default ListItem;
+export default ListItems;
