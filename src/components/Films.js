@@ -32,7 +32,7 @@ function Films() {
                 <h3>{film.title}</h3>
                 <p>Director: {film.director}</p>
                 <p>Producer: {film.producer}</p>
-                <p>Release_date: {film.release_date}</p>
+                <p>Release date: {film.release_date}</p>
                 <p>Rotten Tomato Score: {film.rt_score}</p>
               </div>
             ))}
