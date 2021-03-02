@@ -19,7 +19,6 @@ function Films() {
 
   return (
     <>
-      <h2>Films</h2>
       <Search type={'films'} setSearch={setSearch} />
       <div className="list-container">
         <div className="list-card">

@@ -19,7 +19,6 @@ function Locations() {
 
   return (
     <>
-      <h2>Locations</h2>
       <Search type={'locations'} setSearch={setSearch} />
       <div className="list-container">
         <div className="list-card">

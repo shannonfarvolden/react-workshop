@@ -19,7 +19,6 @@ function People() {
 
   return (
     <>
-      <h2>People</h2>
       <Search type={'people'} setSearch={setSearch} />
       <div className="list-container">
         <div className="list-card">
