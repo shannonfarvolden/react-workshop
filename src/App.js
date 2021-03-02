@@ -22,7 +22,7 @@ function App() {
   }
   return (
     <div className="App">
-      <h1>Studio Ghibli Films</h1>
+      <h1>Studio Ghibli {type}</h1>
       {renderType()}
       <SideNav setType={setType} />
     </div>

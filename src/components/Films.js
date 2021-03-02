@@ -7,14 +7,14 @@ function Films() {
   const [search, setSearch] = useState('');
 
   useEffect(() => {
-    async function getPeople() {
+    async function getFilms() {
       const response = await fetch(`https://ghibliapi.herokuapp.com/films`);
       const data = await response.json();
 
       setFilms(data);
     }
 
-    getPeople();
+    getFilms();
   }, []);
 
   return (
