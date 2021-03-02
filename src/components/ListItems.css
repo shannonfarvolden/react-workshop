@@ -1,0 +1,21 @@
+.item {
+  border-radius: 5px;
+  padding: 5px;
+  margin: 5px;
+  background-color: #bdb2ff;
+}
+
+.list-container {
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.list-card {
+  border-radius: 5px;
+  width: 60%;
+  padding: 20px;
+  background-color: #eee;
+  overflow-y: auto;
+}

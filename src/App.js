@@ -1,34 +1,30 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import './App.css';
+import SideNav from './components/SideNav';
+import Films from './components/Films';
+import People from './components/People';
+import Locations from './components/Locations';
 
 function App() {
-  const [data, setData] = useState([]);
+  const [type, setType] = useState('films');
 
-  async function getFilms() {
-    const response = await fetch('https://ghibliapi.herokuapp.com/films');
-    const filmsData = await response.json();
-
-    setData(filmsData);
+  function renderType() {
+    switch (type) {
+      case 'films':
+        return <Films />;
+      case 'locations':
+        return <Locations />;
+      case 'people':
+        return <People />;
+      default:
+        return <p>Unknown Type {type}</p>;
+    }
   }
-
-  function ItemsList(props) {
-    const {type} = props
-    return (
-      <>
-        <h1>Top {type}</h1>
-        <ul>
-          {data.map((item) => (
-            <li>{item.title}</li>
-          ))}
-        </ul>
-      </>
-    );
-  }
-
   return (
     <div className="App">
-      <ItemsList type={"Films"}/>
-      <button onClick={getFilms}>Get All Films</button>
+      <h1>Studio Ghibli {type}</h1>
+      {renderType()}
+      <SideNav setType={setType} />
     </div>
   );
 }
