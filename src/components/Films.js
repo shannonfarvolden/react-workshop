@@ -29,10 +29,12 @@ function Films() {
             .map((film) => (
               <div className="item" key={film.title}>
                 <h3>{film.title}</h3>
-                <p>Director: {film.director}</p>
-                <p>Producer: {film.producer}</p>
-                <p>Release date: {film.release_date}</p>
-                <p>Rotten Tomato Score: {film.rt_score}</p>
+                <div className="details">
+                  <p>Director: {film.director}</p>
+                  <p>Producer: {film.producer}</p>
+                  <p>Release date: {film.release_date}</p>
+                  <p>Rotten Tomato Score: {film.rt_score}</p>
+                </div>
               </div>
             ))}
         </div>
