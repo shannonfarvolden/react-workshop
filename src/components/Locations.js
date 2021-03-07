@@ -29,9 +29,10 @@ function Locations() {
             .map((location) => (
               <div className="item" key={location.name}>
                 <h3>{location.name}</h3>
-
-                <p>Climate: {location.climate}</p>
-                <p>Terrain: {location.terrain}</p>
+                <div className="details">
+                  <p>Climate: {location.climate}</p>
+                  <p>Terrain: {location.terrain}</p>
+                </div>
               </div>
             ))}
         </div>

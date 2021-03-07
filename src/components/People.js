@@ -29,9 +29,11 @@ function People() {
             .map((person) => (
               <div className="item" key={person.name}>
                 <h3>{person.name}</h3>
-                <p>Age: {person.age}</p>
-                <p>Hair Colour: {person.eye_color}</p>
-                <p>Eye Colour: {person.hair_color}</p>
+                <div className="details">
+                  <p>Age: {person.age}</p>
+                  <p>Hair Colour: {person.eye_color}</p>
+                  <p>Eye Colour: {person.hair_color}</p>
+                </div>
               </div>
             ))}
         </div>
