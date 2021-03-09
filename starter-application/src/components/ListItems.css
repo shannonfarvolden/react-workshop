@@ -1,0 +1,35 @@
+.item {
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px;
+  background-color: #bdb2ff;
+}
+
+.item h3 {
+  margin: 10px 0px;
+}
+
+.details {
+  display: flex;
+  justify-content: center;
+}
+
+.details p {
+  padding: 0px 10px;
+  margin: 10px 0px;
+}
+
+.list-container {
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.list-card {
+  border-radius: 5px;
+  width: 60%;
+  padding: 20px;
+  background-color: #eee;
+  overflow-y: auto;
+}
